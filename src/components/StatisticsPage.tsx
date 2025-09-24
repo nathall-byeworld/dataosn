@@ -1,13 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Participant, calculateProblemStats, calculateMedalCutoffs } from '../utils/csvParser';
 import { Trophy, Award, Star } from 'lucide-react';
 
 interface StatisticsPageProps {
-  participants: Participant[];
+  participantsByYear: Record<string, Participant[]>;
 }
 
-const StatisticsPage: React.FC<StatisticsPageProps> = ({ participants }) => {
+const StatisticsPage: React.FC<StatisticsPageProps> = ({ participantsByYear }) => {
+  const { year } = useParams<{ year: string }>();
+  
+  if (!year || !participantsByYear[year]) {
+    return (
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900">Year not found</h1>
+          <Link to="/" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    );
+  }
+  
+  const participants = participantsByYear[year];
   const problemStats = calculateProblemStats(participants);
   const medalCutoffs = calculateMedalCutoffs(participants);
   const problems = ['1A', '1B', '1C', '2A', '2B', '2C'];
@@ -23,12 +39,12 @@ const StatisticsPage: React.FC<StatisticsPageProps> = ({ participants }) => {
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="mb-8">
         <Link 
-          to="/osn/2023"
+          to={`/osn/${year}`}
           className="text-blue-600 hover:text-blue-800 font-medium"
         >
-          ← Back to OSN 2023 Results
+          ← Back to OSN {year} Results
         </Link>
-        <h1 className="text-3xl font-bold text-gray-900 mt-2">OSN 2023 Statistics</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mt-2">OSN {year} Statistics</h1>
       </div>
       
       {/* Medal Cutoffs */}
@@ -101,7 +117,7 @@ const StatisticsPage: React.FC<StatisticsPageProps> = ({ participants }) => {
                   <tr key={problem} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <Link
-                        to={`/problem/${problem}`}
+                        to={`/problem/${problem}/${year}`}
                         className="text-blue-600 hover:text-blue-800 font-semibold text-lg"
                       >
                         {problem}

@@ -1,9 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Trophy, Calendar, Users, TrendingUp } from 'lucide-react';
+import { Participant } from '../utils/csvParser';
 
-const HomePage: React.FC = () => {
+interface HomePageProps {
+  participantsByYear: Record<string, Participant[]>;
+}
+
+const HomePage: React.FC<HomePageProps> = ({ participantsByYear }) => {
   const years = [
+    {
+      year: '2024',
+      status: 'completed',
+      participants: participantsByYear['2024']?.length || 0,
+      available: (participantsByYear['2024']?.length || 0) > 0,
+      description: 'Complete results with detailed statistics and analysis.'
+    },
     {
       year: '2024',
       status: 'upcoming',
@@ -14,25 +26,35 @@ const HomePage: React.FC = () => {
     {
       year: '2023',
       status: 'completed',
-      participants: '100',
-      available: true,
+      participants: participantsByYear['2023']?.length || 0,
+      available: (participantsByYear['2023']?.length || 0) > 0,
       description: 'Complete results with detailed statistics and analysis.'
     },
     {
       year: '2022',
       status: 'completed',
-      participants: 'TBD',
-      available: false,
-      description: 'Results will be uploaded soon.'
+      participants: participantsByYear['2022']?.length || 0,
+      available: (participantsByYear['2022']?.length || 0) > 0,
+      description: 'Complete results with detailed statistics and analysis.'
     },
     {
       year: '2021',
       status: 'completed', 
-      participants: 'TBD',
-      available: false,
-      description: 'Results will be uploaded soon.'
+      participants: participantsByYear['2021']?.length || 0,
+      available: (participantsByYear['2021']?.length || 0) > 0,
+      description: 'Complete results with detailed statistics and analysis.'
+    },
+    {
+      year: '2020',
+      status: 'completed', 
+      participants: participantsByYear['2020']?.length || 0,
+      available: (participantsByYear['2020']?.length || 0) > 0,
+      description: 'Complete results with detailed statistics and analysis.'
     }
-  ];
+  ].filter((yearData, index, array) => {
+    // Remove duplicate 2024 entries
+    return array.findIndex(item => item.year === yearData.year) === index;
+  });
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -97,7 +119,7 @@ const HomePage: React.FC = () => {
                 
                 <div className="flex items-center text-sm text-gray-500 mb-6">
                   <Users className="h-4 w-4 mr-1" />
-                  <span>{yearData.participants} participants</span>
+                  <span>{yearData.participants} participant{yearData.participants !== 1 ? 's' : ''}</span>
                 </div>
                 
                 {yearData.available ? (
