@@ -15,7 +15,7 @@ function App() {
     // Load CSV data
     const loadData = async () => {
       try {
-        const response = await fetch('/src/data/data_osn2023.csv');
+        const response = await fetch('/data/data_osn2023.csv');
         const csvText = await response.text();
         const parsedData = parseCSVData(csvText);
         setParticipants(parsedData);
