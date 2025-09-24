@@ -5,11 +5,27 @@ import { Participant, calculateProblemStats, calculateMedalCutoffs } from '../ut
 import { BarChart3, Trophy, Users } from 'lucide-react';
 
 interface ProblemAnalysisProps {
-  participants: Participant[];
+  participantsByYear: Record<string, Participant[]>;
 }
 
-const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participants }) => {
-  const { problemId } = useParams<{ problemId: string }>();
+const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear }) => {
+  const { problemId, year } = useParams<{ problemId: string; year?: string }>();
+  const currentYear = year || '2023'; // Default to 2023 for backward compatibility
+  
+  if (!participantsByYear[currentYear]) {
+    return (
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900">Year not found</h1>
+          <Link to="/" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    );
+  }
+  
+  const participants = participantsByYear[currentYear];
   const problemStats = calculateProblemStats(participants);
   const medalCutoffs = calculateMedalCutoffs(participants);
   
@@ -18,7 +34,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participants }) => {
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900">Problem not found</h1>
-          <Link to="/osn/2023/statistics" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">
+          <Link to={`/osn/${currentYear}/statistics`} className="text-blue-600 hover:text-blue-800 mt-4 inline-block">
             ← Back to Statistics
           </Link>
         </div>
@@ -48,13 +64,13 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participants }) => {
     <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="mb-8">
         <Link 
-          to="/osn/2023/statistics"
+          to={`/osn/${currentYear}/statistics`}
           className="text-blue-600 hover:text-blue-800 font-medium"
         >
           ← Back to Statistics
         </Link>
         <h1 className="text-4xl font-bold text-gray-900 mt-2">Problem {problemId}</h1>
-        <p className="text-gray-600 mt-2">OSN 2023 Analysis</p>
+        <p className="text-gray-600 mt-2">OSN {currentYear} Analysis</p>
       </div>
       
       {/* Key Statistics */}
