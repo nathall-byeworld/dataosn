@@ -1,0 +1,101 @@
+#,Nama,J.K.,Sekolah,Provinsi,1A,1B,1C,2A,2B,2C,Total,Medali
+1,Albert Yulius Ramahalim,L,SMA Katolik Ricci,DKI Jakarta,29,56,81,100,100,73,439,Emas
+2,Joseph Oliver Lim,L,SMAK 1 BPK PENABUR Jakarta,DKI Jakarta,48,56,100,30,100,73,407,Emas
+3,Christoffer Edbert Karuniawan,L,SMAK St. Louis 1 Surabaya,Jawa Timur,75,36,100,30,100,60,401,Emas
+4,Shane Michael Tanata Tendy,L,SMAK Petra 2 Surabaya,Jawa Timur,75,36,81,30,61,73,356,Emas
+5,Joshua James,L,SMA Surabaya Cambridge School,Jawa Timur,29,36,81,30,100,73,349,Emas
+6,Daniel Anantadhirya Adyawisesa Linan,L,SMAN 1 Yogyakarta,D. I. Yogyakarta,75,30,67,73,35,60,340,Perak
+6,Kenzie Raditya Tirtarahardja,L,SMAN 5 Makassar,Sulawesi Selatan,20,50,67,30,100,73,340,Perak
+8,Eryawan Presma Yulianrifat,L,SMA Semesta BBS Semarang,Jawa Tengah,48,30,86,30,61,73,328,Perak
+9,Ester Gracia,P,SMAK 1 BPK PENABUR Bandung,Jawa Barat,48,56,46,30,61,73,314,Perak
+10,Joel Gunawan,L,SMAK Gloria 2 Surabaya,Jawa Timur,48,30,81,30,61,60,310,Perak
+11,Arvin,L,SMAK Santu Petrus Pontianak,Kalimantan Barat,48,30,86,30,100,11,305,Perak
+12,Ryan Reno,L,SMAK Immanuel Pontianak,Kalimantan Barat,20,30,86,30,61,73,300,Perak
+13,Adrian Aryaputra Hamzah,L,SMAK BPK PENABUR Gading Serpong,Banten,48,30,46,73,61,36,294,Perak
+14,Shielda Kamila Hidajat,P,SMA Kharisma Bangsa Tangerang Selatan,Banten,48,36,60,30,100,18,292,Perak
+15,Christoffer Tan,L,SMAK IPEKA Palembang,Sumatera Selatan,48,36,55,30,61,60,290,Perak
+16,Yomori Achiza,L,SMA Pribadi Bandung,Jawa Barat,20,36,67,30,100,36,289,Perunggu
+17,Vannes Wijaya,L,SMAN 8 Pekanbaru,Riau,31,30,100,30,61,36,288,Perunggu
+18,Gustav Ian Setiabudi,L,SMPK PLUS PENABUR Cirebon,Jawa Barat,20,36,48,30,61,73,268,Perunggu
+19,Rhaken Shaquille Akbar Yanuanda,L,SMAN 3 Samarinda,Kalimantan Timur,48,26,67,73,35,13,262,Perunggu
+20,Edbert Halim,L,SMA Santa Maria 1 Cirebon,Jawa Barat,48,56,27,30,61,36,258,Perunggu
+21,Nagata Parama Aptana,L,SMA Kesatuan Bangsa Bantul,D. I. Yogyakarta,20,36,46,30,61,60,253,Perunggu
+21,Ferdy Rizkiawan,L,SMAN 2 Purwokerto,Jawa Tengah,20,36,46,30,61,60,253,Perunggu
+23,Erick Jovan Muljadi,L,SMAK BPK PENABUR Gading Serpong,Banten,40,30,48,30,42,60,250,Perunggu
+24,Nadhirah,P,SMAN 1 Manggar,Kep. Bangka Belitung,20,30,67,30,42,60,249,Perunggu
+25,Mochammad Fariz Rifqi Rizqulloh,L,SMA Semesta BBS Semarang,Jawa Tengah,20,36,81,30,61,18,246,Perunggu
+26,Salvatore Unedo Oktavianus Silalahi,L,SMP Kanisius Jakarta,DKI Jakarta,48,30,67,30,42,18,235,Perunggu
+27,Gabriella,P,SMAK Rajawali Makassar,Sulawesi Selatan,20,36,48,30,61,36,231,Perunggu
+28,Polikarpus Arya Pradhanika,L,SMAN 3 Yogyakarta,D. I. Yogyakarta,20,36,46,30,61,36,229,Perunggu
+29,Naila Atifa Asrif,P,MAN 2 Kota Malang,Jawa Timur,48,30,86,30,19,11,224,Perunggu
+30,Kelven Nathanael,L,SMPK Santa Clara,Jawa Timur,20,26,81,30,42,18,217,Perunggu
+31,Berlyandhica Alam Febriwantoro,L,SMAN 1 Maos,Jawa Tengah,20,36,27,30,42,60,215,
+32,Ivan Febrianto,L,SMAN 2 Tangerang Selatan,Banten,48,30,27,30,61,18,214,
+33,Jessy Mazuki,P,SMA Sutomo 1 Medan,Sumatera Utara,20,36,67,30,42,18,213,
+34,Nathan Keith Poernama,L,SMAK 1 BPK PENABUR Jakarta,DKI Jakarta,20,36,46,30,42,36,210,
+35,Alif Bintang Elfandra,L,SMAN Unggulan M. H. Thamrin,DKI Jakarta,20,30,27,30,42,60,209,
+35,M. Arvin Wijayanto,L,MAN Insan Cendekia Pekalongan,Jawa Tengah,20,30,27,30,42,60,209,
+37,Akmal Ramadhan,L,SMAN Unggulan M. H. Thamrin,DKI Jakarta,20,30,15,30,42,60,197,
+38,Daniel Stevanus,L,SMA Wr. Supratman 2 Medan,Sumatera Utara,20,26,34,30,25,60,195,
+39,Radhya Cahya Kusuma,L,SMPN 8 Yogyakarta,D. I. Yogyakarta,11,36,15,30,42,60,194,
+40,Stephanie Natasya,P,SMAK St. Louis 1 Surabaya,Jawa Timur,14,36,48,30,25,36,189,
+40,Michael,L,SMAK Santu Petrus Pontianak,Kalimantan Barat,20,26,48,22,42,31,189,
+42,Vittorio Wijaya,L,SMA British School Jakarta,Banten,20,32,27,30,42,36,187,
+42,Khansa Adilla Reva,P,MAN 2 Pekanbaru,Riau,20,30,27,8,42,60,187,
+44,Aditya Ilham Khairullah Seger,L,SMAN 8 Jakarta,DKI Jakarta,11,36,46,30,42,18,183,
+45,Muhammad Zaky Ghoetti Ananda,L,MAN 2 Pekanbaru,Riau,0,30,15,30,42,60,177,
+46,Ainun Nadhifah Syamsiyah,P,SMAN 16 Surabaya,Jawa Timur,20,30,15,30,61,18,174,
+47,Muhammad Kautsar Aryana Prasetya,L,SMAN 3 Yogyakarta,D. I. Yogyakarta,11,19,46,30,42,18,166,
+47,Jeremy Adrian Aaron Gozali,L,SMA Kanisius Jakarta,DKI Jakarta,20,30,8,30,42,36,166,
+49,Joseph Greffen Komala,L,SMA Bruderan Purwokerto,Jawa Tengah,20,36,48,22,25,13,164,
+50,Fajhri Ramadhan A,L,MAN Insan Cendekia Gorontalo,Gorontalo,20,30,34,30,35,11,160,
+50,Faiz Assabil Firdaus,L,SMAN 23 Bandung,Jawa Barat,20,30,27,30,35,18,160,
+52,Evandita Wiratama Putra,L,SMAN 5 Semarang,Jawa Tengah,20,26,27,8,42,36,159,
+53,Janis Joplin,L,SMA Sutomo 1 Medan,Sumatera Utara,20,0,46,30,42,18,156,
+54,Rayendra Althaf Taraka Noor,L,SMA IT As-Syifa Boarding School,Jawa Barat,20,30,15,30,35,25,155,
+55,Muhamad Nabil Alhanif,L,SMA Kharisma Bangsa Tangerang Selatan,Banten,6,30,27,30,42,18,153,
+56,Roberto Eugenio Sugiarto,L,SMPN 1 Wonosobo,Jawa Tengah,0,30,27,30,42,18,147,
+57,Raihan Akbar,L,MAN 2 Kota Malang,Jawa Timur,20,30,20,30,35,11,146,
+58,Nyoman Wiprayanka,L,SMAN 4 Denpasar,Bali,20,11,46,30,19,13,139,
+58,Muhammad Roihan,L,MAN Insan Cendekia Jambi,Jambi,5,26,67,0,35,6,139,
+60,Muhammad Fakhrell Andreaz,L,MAN Insan Cendekia Lampung Timur,Lampung,5,26,48,30,4,18,131,
+61,Kenneth Feivel Johannsen Hosannah,L,SMAK 1 BPK PENABUR Bandung,Jawa Barat,31,9,8,22,42,18,130,
+61,Sefriano Edsel Jieftara Djie,L,SMAN 1 Balikpapan,Kalimantan Timur,0,56,27,22,12,13,130,
+63,Niko Samuel Simanjuntak,L,SMAN 2 Kisaran,Sumatera Utara,11,30,15,30,25,18,129,
+64,Vavan Farizzaman,L,SMA Pribadi Bandung,Jawa Barat,20,30,15,30,31,0,126,
+65,Ahmad Nur Rohim,L,SMAN 1 Brebes,Jawa Tengah,14,19,15,30,35,6,119,
+66,Rahmad Dwirizki Olders,L,MAN Insan Cendekia Padang Pariaman,Sumatera Barat,5,30,15,30,19,18,117,
+67,Alghoza Hamdani,L,SMA Al-Kautsar Bandar Lampung,Lampung,6,30,15,30,12,18,111,
+68,Goldwin Sonick Wijaya Thaha,L,SMAK 3 BPK PENABUR Jakarta,DKI Jakarta,20,9,27,22,21,11,110,
+69,Gracia Abadi,P,SMAK 3 BPK PENABUR Jakarta,DKI Jakarta,5,19,15,8,42,18,107,
+70,Kemas Muhammad Fatahillah,L,SMA Ignatius Global School Palembang,Sumatera Selatan,5,5,15,30,32,18,105,
+71,Michael Ignasius,L,SMAN 3 Jambi,Jambi,11,9,15,30,19,18,102,
+72,Dilon Ezra Frendolin Sitanggang,L,SMAN 2 Depok,Jawa Barat,5,9,27,30,12,18,101,
+73,Bagas Adnan Rasyid,L,SMA MTA Surakarta,Jawa Tengah,5,9,15,30,19,13,91,
+74,Muhammad Nadzhif Fikri,L,SMA Pribadi Depok,Jawa Barat,0,30,15,0,35,6,86,
+75,Alief Gilang Permana Putra,L,SMAN Banua Kalimantan Selatan,Kalimantan Selatan,0,5,15,30,12,18,80,
+76,Mariano Gerardus Senduk,L,SMA Lokon St. Nikolaus Tomohon,Sulawesi Utara,0,0,15,30,19,13,77,
+77,Yazidane Hakim,L,SMAN 4 Rejang Lebong,Bengkulu,20,5,15,8,8,18,74,
+78,Marciano Lie,L,SMA Wr. Supratman 2 Medan,Sumatera Utara,11,15,0,8,19,18,71,
+79,A. Agung Ngurah Bayu Widia Putra,L,SMAN 1 Singaraja,Bali,6,0,15,30,4,12,67,
+79,Theodore Alvin Tanjaya,L,SMAK BPK PENABUR Bandar Lampung,Lampung,5,5,8,0,42,7,67,
+81,Putra Bijaksana Rusydi,L,SMA Islam Al-Azhar Mandiri Palu,Sulawesi Tengah,14,15,0,8,8,7,52,
+82,Dhafin Fawwaz Ikramullah,L,SMAN 1 Medan,Sumatera Utara,5,26,0,8,8,0,47,
+83,Evint Leovonzko,L,SMA Budi Utama,D. I. Yogyakarta,0,5,0,8,25,7,45,
+84,Viery Joynaden,L,SMA Pelita Utama,Kep. Riau,5,5,15,8,4,7,44,
+85,Stella Ling Raharjo,P,SMP Mawar Sharon Christian School,Jawa Timur,5,15,0,8,8,7,43,
+86,Randi Palguna Artayasa,L,SMAN 3 Mataram,Nusa Tenggara Barat,5,5,15,0,4,13,42,
+87,Nabil Hamzah Ash-Shiddiq,L,SMAN 1 Padang,Sumatera Barat,5,0,0,8,8,13,34,
+88,Muh. Rifqy Nirwandi,L,SMAN 2 Tarakan,Kalimantan Utara,5,5,0,0,12,7,29,
+89,Oktavianus Samuel Minarto,L,SMAN 1 Sampit,Kalimantan Tengah,5,0,0,8,8,7,28,
+89,Kent Wijaya,L,SMA Fransiskus Bandar Lampung,Lampung,0,9,0,8,4,7,28,
+91,Excell Galuh Permana Lukito,L,SMA Averos Sorong,Papua Barat,5,5,0,8,0,7,25,
+92,Umar Jihad,L,MAN Insan Cendekia Kendari,Sulawesi Tenggara,5,0,0,8,4,0,17,
+93,Khaif Alfansyuri,L,SMA Fatih Bilingual School Banda Aceh,Aceh,0,0,15,0,0,0,15,
+94,Aldo Revido,L,SMAN 1 Mamasa,Sulawesi Barat,5,0,0,0,0,0,5,
+95,Akmal Nabil Fikri,L,SMAN 1 Bontang,Kalimantan Timur,0,0,0,0,0,0,0,
+95,Radhofan Azizi Ramdhani,L,Sekolah Indonesia Riyadh Tingkat SMA,Luar Negeri,0,0,0,0,0,0,0,
+95,Nunik Sabualamu,P,SMAN 8 Seram Bagian Barat,Maluku,0,0,0,0,0,0,0,
+95,Sukmawati,P,SMAN 2 Halmahera Timur,Maluku Utara,0,0,0,0,0,0,0,
+95,Benedikta Alfionita Moi,P,SMA Regina Pacis Bajawa,Nusa Tenggara Timur,0,0,0,0,0,0,0,
+95,Adinda Sofia Iriyanti,P,SMAN 2 Jayapura,Papua,0,0,0,0,0,0,0,
