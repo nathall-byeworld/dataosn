@@ -23,9 +23,15 @@ function App() {
         for (const year of years) {
           try {
             const response = await fetch(`/data/data_osn${year}.csv`);
-            const csvText = await response.text();
-            const parsedData = parseCSVData(csvText);
-            allData[year] = parsedData;
+            if (response.ok) {
+              const csvText = await response.text();
+              const parsedData = parseCSVData(csvText);
+              allData[year] = parsedData;
+              console.log(`Loaded ${parsedData.length} participants for ${year}`);
+            } else {
+              console.warn(`Failed to load data for ${year}: ${response.status}`);
+              allData[year] = [];
+            }
           } catch (error) {
             console.error(`Error loading data for ${year}:`, error);
             allData[year] = [];

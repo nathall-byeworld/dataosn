@@ -91,7 +91,7 @@ const OSNYearPage: React.FC<OSNYearPageProps> = ({ participantsByYear }) => {
       </div>
       
       {/* Results Table */}
-      <ParticipantTable participants={participants} />
+      <ParticipantTable participants={participants} year={year} />
       
       <div className="mt-8 text-center">
         <Link

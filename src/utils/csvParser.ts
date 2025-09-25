@@ -2,7 +2,7 @@ export interface Participant {
   rank: number;
   name: string;
   gender: string;
-  grade: string;
+  grade?: string; // Optional since not all years have this
   school: string;
   province: string;
   scores: {
@@ -21,37 +21,47 @@ export const parseCSVData = (csvText: string): Participant[] => {
   const lines = csvText.trim().split('\n');
   const participants: Participant[] = [];
   
+  if (lines.length < 2) return participants;
+  
+  // Get header to determine format
+  const header = lines[0].toLowerCase();
+  const hasGradeColumn = header.includes('kls');
+  
   // Skip header row
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i];
     if (!line.trim()) continue;
     
-    const columns = line.split(',');
+    // Split by comma but handle quoted fields
+    const columns = line.split(',').map(col => col.trim());
     
-    // Handle the case where some entries might have commas in school names
+    if (columns.length < 10) continue; // Skip malformed rows
+    
     const parseScore = (value: string): number | null => {
-      if (!value || value.trim() === '') return null;
+      if (!value || value.trim() === '' || value.trim() === '-') return null;
       const num = parseInt(value.trim());
       return isNaN(num) ? null : num;
     };
     
+    let colIndex = 0;
+    
     const participant: Participant = {
-      rank: parseInt(columns[0]) || 0,
-      name: columns[1] || '',
-      gender: columns[2] || '',
-      grade: columns[3] || '',
-      school: columns[4] || '',
-      province: columns[5] || '',
+      rank: parseInt(columns[colIndex++]) || 0,
+      name: columns[colIndex++] || '',
+      gender: columns[colIndex++] || '',
+      grade: hasGradeColumn ? columns[colIndex++] : undefined,
+      school: columns[colIndex++] || '',
+      province: columns[colIndex++] || '',
       scores: {
-        '1A': parseScore(columns[6]),
-        '1B': parseScore(columns[7]),
-        '1C': parseScore(columns[8]),
-        '2A': parseScore(columns[9]),
-        '2B': parseScore(columns[10]),
-        '2C': parseScore(columns[11])
+        '1A': parseScore(columns[colIndex++]),
+        '1B': parseScore(columns[colIndex++]),
+        '1C': parseScore(columns[colIndex++]),
+        '2A': parseScore(columns[colIndex++]),
+        '2B': parseScore(columns[colIndex++]),
+        '2C': parseScore(columns[colIndex++])
       },
-      total: parseInt(columns[12]) || 0,
-      medal: columns[13] || ''
+      total: parseInt(columns[colIndex++]) || 0,
+      medal: columns[colIndex] || ''
     };
     
     participants.push(participant);
@@ -99,10 +109,14 @@ export const calculateMedalCutoffs = (participants: Participant[]) => {
   const silverMedalists = participants.filter(p => p.medal === 'Perak');
   const bronzeMedalists = participants.filter(p => p.medal === 'Perunggu');
   
-  // Calculate actual cutoffs based on the data
-  const goldCutoff = 361; // Matthew Hutama Pramana's score (5th place, last gold)
-  const silverCutoff = 317; // Faiz Rizki Ramadhan's score (15th place, last silver)  
-  const bronzeCutoff = 276; // Rainer Evan Rusly's score (25th place, last bronze)
+  // Find actual cutoffs from the data
+  const goldScores = goldMedalists.map(p => p.total).sort((a, b) => b - a);
+  const silverScores = silverMedalists.map(p => p.total).sort((a, b) => b - a);
+  const bronzeScores = bronzeMedalists.map(p => p.total).sort((a, b) => b - a);
+  
+  const goldCutoff = goldScores.length > 0 ? Math.min(...goldScores) : 0;
+  const silverCutoff = silverScores.length > 0 ? Math.min(...silverScores) : 0;
+  const bronzeCutoff = bronzeScores.length > 0 ? Math.min(...bronzeScores) : 0;
   
   return {
     gold: goldCutoff,
