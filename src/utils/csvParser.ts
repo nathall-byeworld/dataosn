@@ -95,14 +95,27 @@ export const calculateProblemStats = (participants: Participant[]) => {
 };
 
 export const calculateMedalCutoffs = (participants: Participant[]) => {
+  // Filter participants by medal type
   const goldMedalists = participants.filter(p => p.medal === 'Emas');
   const silverMedalists = participants.filter(p => p.medal === 'Perak');
   const bronzeMedalists = participants.filter(p => p.medal === 'Perunggu');
   
-  // Calculate actual cutoffs based on the data
-  const goldCutoff = 361; // Matthew Hutama Pramana's score (5th place, last gold)
-  const silverCutoff = 317; // Faiz Rizki Ramadhan's score (15th place, last silver)  
-  const bronzeCutoff = 276; // Rainer Evan Rusly's score (25th place, last bronze)
+  // Calculate actual cutoffs based on the lowest score in each medal category
+  let goldCutoff = 0;
+  let silverCutoff = 0;
+  let bronzeCutoff = 0;
+  
+  if (goldMedalists.length > 0) {
+    goldCutoff = Math.min(...goldMedalists.map(p => p.total));
+  }
+  
+  if (silverMedalists.length > 0) {
+    silverCutoff = Math.min(...silverMedalists.map(p => p.total));
+  }
+  
+  if (bronzeMedalists.length > 0) {
+    bronzeCutoff = Math.min(...bronzeMedalists.map(p => p.total));
+  }
   
   return {
     gold: goldCutoff,
