@@ -51,7 +51,7 @@ export const parseCSVData = (csvText: string): Participant[] => {
         '2C': parseScore(columns[11])
       },
       total: parseInt(columns[12]) || 0,
-      medal: columns[13] || 'bronze'
+      medal: columns[13] || ''
     };
     
     participants.push(participant);
