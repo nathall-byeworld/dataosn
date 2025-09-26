@@ -56,8 +56,6 @@ function App() {
           </div>
         ) : (
           <Routes>
-            <Route path="/" element={<HomePage participantsByYear={participantsByYear} />} />
-            <Route path="/osn/2023" element={<OSN2023Page participants={participantsByYear['2023'] || []} />} />
             <Route path="/osn/:year" element={<OSNYearPage participantsByYear={participantsByYear} />} />
             <Route path="/osn/:year/statistics" element={<StatisticsPage participantsByYear={participantsByYear} />} />
             <Route path="/problem/:problemId/:year?" element={<ProblemAnalysis participantsByYear={participantsByYear} />} />
