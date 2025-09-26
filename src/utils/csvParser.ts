@@ -19,46 +19,31 @@ export interface Participant {
 
 export const parseCSVData = (csvText: string): Participant[] => {
   const lines = csvText.trim().split('\n');
-  const participants: Participant[] = [];
-  
-  // Skip header row
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i];
-    if (!line.trim()) continue;
-    
-    const columns = line.split(',');
-    
-    // Handle the case where some entries might have commas in school names
-    const parseScore = (value: string): number | null => {
-      if (!value || value.trim() === '') return null;
-      const num = parseInt(value.trim());
-      return isNaN(num) ? null : num;
-    };
-    
-    const participant: Participant = {
-      rank: parseInt(columns[0]) || 0,
-      name: columns[1] || '',
-      gender: columns[2] || '',
-      grade: columns[3] || '',
-      school: columns[4] || '',
-      province: columns[5] || '',
-      scores: {
-        '1A': parseScore(columns[6]),
-        '1B': parseScore(columns[7]),
-        '1C': parseScore(columns[8]),
-        '2A': parseScore(columns[9]),
-        '2B': parseScore(columns[10]),
-        '2C': parseScore(columns[11])
-      },
-      total: parseInt(columns[12]) || 0,
-      medal: columns[13] || ''
-    };
-    
-    participants.push(participant);
-  }
-  
-  return participants;
-};
+  if (lines.length < 2) return [];
+
+  const header = lines[0].split(',').map(h => h.trim().toLowerCase());
+
+  // Find column indexes dynamically
+  const colIndex = (name: string) => header.indexOf(name.toLowerCase());
+
+  const idx = {
+    rank: colIndex("rank"),
+    name: colIndex("name"),
+    gender: colIndex("gender"),
+    grade: colIndex("grade"), // might be -1 if missing
+    school: colIndex("school"),
+    province: colIndex("province"),
+    scores: {
+      "1A": colIndex("1a"),
+      "1B": colIndex("1b"),
+      "1C": colIndex("1c"),
+      "2A": colIndex("2a"),
+      "2B": colIndex("2b"),
+      "2C": colIndex("2c")
+    },
+    total: colIndex("total"),
+    medal: colIndex("medal"),
+  };
 
 export const calculateProblemStats = (participants: Participant[]) => {
   const problems = ['1A', '1B', '1C', '2A', '2B', '2C'] as const;
