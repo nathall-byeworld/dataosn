@@ -39,7 +39,7 @@ const OSN2023Page: React.FC<OSN2023PageProps> = ({ participants }) => {
         <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg p-4 border border-yellow-200">
           <div className="text-center">
             <div className="text-2xl font-bold text-yellow-900">
-              {participants.filter(p => p.medal === 'Emas').length}
+              {participants.filter(p => p.medal.toLowerCase() === 'emas').length}
             </div>
             <div className="text-sm text-yellow-700">🥇 Gold Medals</div>
           </div>
@@ -48,7 +48,7 @@ const OSN2023Page: React.FC<OSN2023PageProps> = ({ participants }) => {
         <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-4 border border-gray-200">
           <div className="text-center">
             <div className="text-2xl font-bold text-gray-900">
-              {participants.filter(p => p.medal === 'Perak').length}
+              {participants.filter(p => p.medal.toLowerCase() === 'perak').length}
             </div>
             <div className="text-sm text-gray-700">🥈 Silver Medals</div>
           </div>
@@ -57,7 +57,7 @@ const OSN2023Page: React.FC<OSN2023PageProps> = ({ participants }) => {
         <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-4 border border-orange-200">
           <div className="text-center">
             <div className="text-2xl font-bold text-orange-900">
-              {participants.filter(p => p.medal === 'Perunggu').length}
+              {participants.filter(p => p.medal.toLowerCase() === 'perunggu').length}
             </div>
             <div className="text-sm text-orange-700">🥉 Bronze Medals</div>
           </div>

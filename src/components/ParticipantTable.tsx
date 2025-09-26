@@ -51,12 +51,18 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants }) => 
   };
   
   const getMedalColor = (medal: string) => {
-    switch (medal) {
+    switch (medal.toLowerCase()) {
+      case 'emas':
       case 'Emas':
+      case 'gold':
         return 'bg-yellow-50 border-l-4 border-yellow-400';
+      case 'perak':
       case 'Perak':
+      case 'silver':
         return 'bg-gray-50 border-l-4 border-gray-400';
+      case 'perunggu':
       case 'Perunggu':
+      case 'bronze':
         return 'bg-orange-50 border-l-4 border-orange-400';
       default:
         return 'bg-white';
@@ -64,12 +70,18 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants }) => 
   };
   
   const getMedalBadge = (medal: string) => {
-    switch (medal) {
+    switch (medal.toLowerCase()) {
+      case 'emas':
       case 'Emas':
+      case 'gold':
         return <span className="px-2 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 rounded-full">🥇 Gold</span>;
+      case 'perak':
       case 'Perak':
+      case 'silver':
         return <span className="px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full">🥈 Silver</span>;
+      case 'perunggu':
       case 'Perunggu':
+      case 'bronze':
         return <span className="px-2 py-1 text-xs font-semibold bg-orange-100 text-orange-800 rounded-full">🥉 Bronze</span>;
       default:
         return null;

@@ -96,9 +96,9 @@ export const calculateProblemStats = (participants: Participant[]) => {
 
 export const calculateMedalCutoffs = (participants: Participant[]) => {
   // Filter participants by medal type
-  const goldMedalists = participants.filter(p => p.medal === 'Emas');
-  const silverMedalists = participants.filter(p => p.medal === 'Perak');
-  const bronzeMedalists = participants.filter(p => p.medal === 'Perunggu');
+  const goldMedalists = participants.filter(p => p.medal.toLowerCase() === 'emas' || p.medal.toLowerCase() === 'gold');
+  const silverMedalists = participants.filter(p => p.medal.toLowerCase() === 'perak' || p.medal.toLowerCase() === 'silver');
+  const bronzeMedalists = participants.filter(p => p.medal.toLowerCase() === 'perunggu' || p.medal.toLowerCase() === 'bronze');
   
   // Calculate actual cutoffs based on the lowest score in each medal category
   let goldCutoff = 0;
