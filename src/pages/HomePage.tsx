@@ -17,13 +17,6 @@ const HomePage: React.FC<HomePageProps> = ({ participantsByYear }) => {
       description: 'Complete results with detailed statistics and analysis.'
     },
     {
-      year: '2024',
-      status: 'upcoming',
-      participants: 'TBD',
-      available: false,
-      description: 'Results will be available after the competition.'
-    },
-    {
       year: '2023',
       status: 'completed',
       participants: participantsByYear['2023']?.length || 0,
