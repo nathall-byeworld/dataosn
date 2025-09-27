@@ -74,7 +74,7 @@ const OSN2023Page: React.FC<OSN2023PageProps> = ({ participants }) => {
       </div>
       
       {/* Results Table */}
-      <ParticipantTable participants={participants} year="2023" />
+      <ParticipantTable participants={participants} />
       
       <div className="mt-8 text-center">
         <Link
