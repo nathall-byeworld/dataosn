@@ -4,9 +4,10 @@ import { ArrowUpDown, RotateCcw } from 'lucide-react';
 
 interface ParticipantTableProps {
   participants: Participant[];
+  year?: string;
 }
 
-const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants }) => {
+const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year }) => {
   const [sortBy, setSortBy] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   
@@ -91,7 +92,7 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants }) => 
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">OSN {year} Results</h2>
+        <h2 className="text-2xl font-bold text-gray-900">OSN {year || 'Results'}</h2>
         <button
           onClick={resetSort}
           className="flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors"
