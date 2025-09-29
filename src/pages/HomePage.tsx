@@ -10,6 +10,13 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ participantsByYear }) => {
   const years = [
     {
+      year: '2025',
+      status: 'upcoming',
+      participants: 'TBD',
+      available: false,
+      description: 'Results will be available after the competition.'
+    },
+    {
       year: '2024',
       status: 'completed',
       participants: participantsByYear['2024']?.length || 0,
