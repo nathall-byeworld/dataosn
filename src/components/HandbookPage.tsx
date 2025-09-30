@@ -4,7 +4,7 @@ import { BookOpen, ExternalLink, MapPin } from 'lucide-react';
 const HandbookPage: React.FC = () => {
   const sections = [
     {
-      title: "Basic Algorithms & Data Structures",
+      title: "Interactive",
       icon: "🔢",
       problems: [
         {
