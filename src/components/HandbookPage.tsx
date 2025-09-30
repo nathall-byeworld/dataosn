@@ -4,7 +4,7 @@ import { BookOpen, ExternalLink, MapPin } from 'lucide-react';
 const HandbookPage: React.FC = () => {
   const sections = [
     {
-      title: "Interactive",
+      title: "Interactive Problems",
       icon: "🔢",
       problems: [
         {
