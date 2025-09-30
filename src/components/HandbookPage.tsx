@@ -143,8 +143,7 @@ const HandbookPage: React.FC = () => {
           ByeWorld's Handbook
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          A comprehensive roadmap for competitive programming mastery. Follow this structured path 
-          from basic algorithms to advanced techniques used in OSN and international olympiads.
+          This page is still on progress. Some eductional problems for OSN preparation.
         </p>
       </div>
       
