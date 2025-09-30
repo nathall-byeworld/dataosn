@@ -20,7 +20,7 @@ const HandbookPage: React.FC = () => {
         {
           name: "Stack & Queue Applications",
           link: "#",
-          description: "Understand when and how to use stacks and queues effectively."
+          description: "Find information (the two unique weights), then find the answer (MST)"
         },
         {
           name: "Tips",
