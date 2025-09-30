@@ -20,7 +20,7 @@ const HandbookPage: React.FC = () => {
         {
           name: "Stack & Queue Applications",
           link: "#",
-          description: "Find information (the two unique weights), then find the answer (MST)"
+          description: "Find information (A and B), then find the answer (MST)"
         },
         {
           name: "Tips",
