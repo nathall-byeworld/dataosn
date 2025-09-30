@@ -155,7 +155,7 @@ const HandbookPage: React.FC = () => {
                 <span className="text-3xl mr-3">{section.icon}</span>
                 <span className="flex items-center">
                   <MapPin className="h-5 w-5 mr-2" />
-                  Level {sectionIndex + 1}: {section.title}
+                  {section.title}
                 </span>
               </h2>
             </div>
