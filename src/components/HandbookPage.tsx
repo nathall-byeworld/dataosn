@@ -176,11 +176,6 @@ const HandbookPage: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed">
                       {problem.description}
                     </p>
-                    <div className="mt-3 flex items-center text-xs text-blue-600">
-                      <span className="bg-blue-100 px-2 py-1 rounded-full">
-                        Level {sectionIndex + 1}.{problemIndex + 1}
-                      </span>
-                    </div>
                   </div>
                 ))}
               </div>
