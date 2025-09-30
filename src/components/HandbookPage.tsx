@@ -10,7 +10,7 @@ const HandbookPage: React.FC = () => {
         {
           name: "Two Pointers Technique",
           link: "#",
-          description: "Master the fundamental two-pointers approach for array and string problems."
+          description: "Extend subtask 3, use binary search"
         },
         {
           name: "Binary Search",
@@ -23,9 +23,9 @@ const HandbookPage: React.FC = () => {
           description: "Understand when and how to use stacks and queues effectively."
         },
         {
-          name: "Basic Graph Traversal (DFS/BFS)",
+          name: "Tips",
           link: "#",
-          description: "Foundation for all graph-related competitive programming problems."
+          description: "Extend subtasks, use DnC (binary search, divide by 3, etc)"
         }
       ]
     },
