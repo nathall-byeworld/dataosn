@@ -47,7 +47,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   // Get unique scores that participants actually achieved
   const participantScores = participants
     .map(p => p.scores[problemId as keyof typeof p.scores])
-    .map(score => score === '' ? 0 : score as number);
+    .map(score => score === null ? 0 : score as number);
   
   const uniqueParticipantScores = [...new Set(participantScores)];
   
@@ -57,7 +57,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   
   const graphData = sortedScores.map(score => ({
     score,
-    participants: stats.suffixCounts[score]
+    participants: stats.suffixCounts[score] || 0
   }));
   
   const getCutoffMedal = (score: number) => {
