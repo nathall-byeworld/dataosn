@@ -47,7 +47,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   // Get unique scores that participants actually achieved
   const participantScores = participants
     .map(p => p.scores[problemId as keyof typeof p.scores])
-    .map(score => score === null ? 0 : score as number);
+    .map(score => score === '' ? 0 : score as number);
   
   const uniqueParticipantScores = [...new Set(participantScores)];
   
