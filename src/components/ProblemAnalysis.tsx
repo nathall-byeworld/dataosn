@@ -123,7 +123,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
           Score Distribution - Participants with Score ≥ X
         </h2>
         <div className="h-96">
-          <ResponsiveContainer width="95%" height="95%">
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={graphData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis 
@@ -148,9 +148,6 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <p className="text-gray-600 mt-4 text-center">
-          This graph shows how many participants achieved at least a certain score on Problem {problemId}
-        </p>
       </div>
     </div>
   );
