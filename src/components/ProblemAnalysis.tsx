@@ -123,7 +123,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
         </h2>
         <div className="h-96 pb-8">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={graphData} margin={{ top: 20, right: 30, left: 20, bottom: 30 }}>
+            <LineChart data={graphData} margin={{ top: 40, right: 30, left: 20, bottom: 60 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis 
                 dataKey="score" 
