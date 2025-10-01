@@ -162,7 +162,7 @@ const StatisticsPage: React.FC<StatisticsPageProps> = ({ participantsByYear }) =
             </tbody>
           </table>
           <div className="text-center">
-            <p>Click the problem to see a more detailed analysis</p>
+            <p className="text-2xl font-bold text-gray-900 mb-6 flex items-center">Click the problem to see a more detailed analysis</p>
           </div>
         </div>
       </div>
