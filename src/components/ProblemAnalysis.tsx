@@ -90,7 +90,6 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             <h3 className="text-sm font-medium text-yellow-800">Top 10 Cutoff</h3>
           </div>
           <p className="text-3xl font-bold text-yellow-900">{stats.top10}</p>
-          <p className="text-sm text-yellow-700">{getCutoffMedal(stats.top10)} Level</p>
         </div>
         
         <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
@@ -99,7 +98,6 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             <h3 className="text-sm font-medium text-blue-800">Top 25 Cutoff</h3>
           </div>
           <p className="text-3xl font-bold text-blue-900">{stats.top25}</p>
-          <p className="text-sm text-blue-700">{getCutoffMedal(stats.top25)} Level</p>
         </div>
         
         <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
@@ -108,7 +106,6 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             <h3 className="text-sm font-medium text-purple-800">Top 40 Cutoff</h3>
           </div>
           <p className="text-3xl font-bold text-purple-900">{stats.top40}</p>
-          <p className="text-sm text-purple-700">{getCutoffMedal(stats.top40)} Level</p>
         </div>
       </div>
       
