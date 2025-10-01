@@ -46,7 +46,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   
   // Prepare data for the suffix graph
   const graphData = [];
-  for (let score = 0; score <= 100; score += 5) {
+  for (let score = 0; score <= 100; score ++) {
     graphData.push({
       score,
       participants: stats.suffixCounts[score] || 0
@@ -98,7 +98,6 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             <h3 className="text-sm font-medium text-blue-800">Top 25 Cutoff</h3>
           </div>
           <p className="text-3xl font-bold text-blue-900">{stats.top25} pts</p>
-          <p className="text-sm text-blue-700">{getCutoffMedal(stats.top25)} Level</p>
         </div>
         
         <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
