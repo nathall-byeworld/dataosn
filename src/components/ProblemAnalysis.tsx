@@ -122,7 +122,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
           Score Distribution - Participants with Score ≥ X
         </h2>
         <div className="h-96 pb-8">
-          <ResponsiveContainer width="100%" height="120%">
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={graphData} margin={{ top: 40, right: 30, left: 20, bottom: 40 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis 
@@ -130,7 +130,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
                 label={{ value: 'Minimum Score', position: 'insideBottom', offset: -40 }}
               />
               <YAxis 
-                label={{ value: 'Number of Participants', angle: -90, position: 'insideLeft' }}
+                label={{ value: 'Num. of Participants', angle: -90, position: 'insideLeft' }}
               />
               <Tooltip 
                 formatter={(value: number) => [`${value} participants`, 'Count']}
