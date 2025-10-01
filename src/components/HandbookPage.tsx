@@ -8,128 +8,50 @@ const HandbookPage: React.FC = () => {
       icon: "🔢",
       problems: [
         {
-          name: "Two Pointers Technique",
-          link: "#",
+          name: "Weird Chickens",
+          link: "https://tlx.toki.id/problems/osn-2015/2C",
           description: "Extend subtask 3, use binary search"
         },
         {
-          name: "Binary Search",
-          link: "#", 
-          description: "Learn to efficiently search sorted arrays and solve optimization problems."
+          name: "Maybe Guess the Number",
+          link: "https://tlx.toki.id/problems/osn-2015/1C", 
+          description: "Divide by 3?"
         },
         {
           name: "Stack & Queue Applications",
-          link: "#",
+          link: "https://tlx.toki.id/problems/osn-2022/1B",
           description: "Find information (A and B), then find the answer (MST)"
         },
         {
-          name: "Tips",
+          name: "How to solve interactive",
           link: "#",
-          description: "Extend subtasks, use DnC (binary search, divide by 3, etc)"
+          description: "Use queries to find information first, then use that info to answer the problem"
+        },
+        {
+          name: "Specific tips",
+          link: "#",
+          description: "Extend subtasks, use DnC (binary search, divide by 3, etc), can you optimize the num of queries?"
         }
       ]
     },
     {
-      title: "Number Theory & Mathematics",
+      title: "Output Only Problems",
       icon: "🧮",
       problems: [
         {
-          name: "GCD & LCM",
-          link: "#",
-          description: "Essential number theory concepts for divisibility problems."
+          name: "National Defence",
+          link: "https://tlx.toki.id/problems/ksn-2020/1A",
+          description: "Solve each subtask separately (dikuli)"
         },
         {
-          name: "Modular Arithmetic",
-          link: "#",
-          description: "Handle large numbers and solve modular equations efficiently."
+          name: "Tourism in Palembang",
+          link: "https://tlx.toki.id/problems/osn-2016/2C",
+          description: "Use random (mt19937)"
         },
         {
-          name: "Prime Numbers & Factorization",
-          link: "#",
-          description: "Sieve algorithms and prime factorization techniques."
-        },
-        {
-          name: "Combinatorics Basics",
-          link: "#",
-          description: "Counting principles, permutations, and combinations."
-        }
-      ]
-    },
-    {
-      title: "Dynamic Programming",
-      icon: "💡",
-      problems: [
-        {
-          name: "1D Dynamic Programming",
-          link: "#",
-          description: "Linear DP patterns like Fibonacci, coin change, and longest increasing subsequence."
-        },
-        {
-          name: "2D Dynamic Programming", 
-          link: "#",
-          description: "Grid-based DP, edit distance, and knapsack variations."
-        },
-        {
-          name: "Tree DP",
-          link: "#",
-          description: "Dynamic programming on trees for optimization problems."
-        },
-        {
-          name: "Digit DP",
-          link: "#",
-          description: "Advanced technique for counting numbers with specific digit properties."
-        }
-      ]
-    },
-    {
-      title: "Graph Algorithms",
-      icon: "🌐",
-      problems: [
-        {
-          name: "Shortest Path Algorithms",
-          link: "#",
-          description: "Dijkstra, Bellman-Ford, and Floyd-Warshall algorithms."
-        },
-        {
-          name: "Minimum Spanning Tree",
-          link: "#",
-          description: "Kruskal and Prim's algorithms for MST problems."
-        },
-        {
-          name: "Topological Sorting",
-          link: "#",
-          description: "Handle dependencies and directed acyclic graphs."
-        },
-        {
-          name: "Strongly Connected Components",
-          link: "#",
-          description: "Kosaraju and Tarjan's algorithms for SCC."
-        }
-      ]
-    },
-    {
-      title: "Advanced Topics",
-      icon: "🚀",
-      problems: [
-        {
-          name: "Segment Trees",
-          link: "#",
-          description: "Efficient range queries and updates on arrays."
-        },
-        {
-          name: "Binary Indexed Tree (Fenwick Tree)",
-          link: "#",
-          description: "Compact data structure for prefix sum operations."
-        },
-        {
-          name: "LCA (Lowest Common Ancestor)",
-          link: "#",
-          description: "Tree preprocessing for fast ancestor queries."
-        },
-        {
-          name: "String Algorithms",
-          link: "#",
-          description: "KMP, Z-algorithm, and suffix-based string matching."
+          name: "Monochrome Mosaic",
+          link: "https://tlx.toki.id/problems/osn-2024/0C",
+          description: "Sometimes you can solve it just like a batch problem"
         }
       ]
     }
