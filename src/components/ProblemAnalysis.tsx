@@ -122,7 +122,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
           Score Distribution - Participants with Score ≥ X
         </h2>
         <div className="h-96 pb-8">
-          <ResponsiveContainer width="100%" height="130%">
+          <ResponsiveContainer width="100%" height="120%">
             <LineChart data={graphData} margin={{ top: 40, right: 30, left: 20, bottom: 40 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis 
