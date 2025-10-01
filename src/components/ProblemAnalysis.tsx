@@ -47,8 +47,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   // Get unique scores that participants actually achieved
   const participantScores = participants
     .map(p => p.scores[problemId as keyof typeof p.scores])
-    .filter(score => score !== null)
-    .map(score => score as number);
+    .map(score => score === null ? 0 : score as number);
   
   const uniqueParticipantScores = [...new Set(participantScores)];
   
@@ -122,13 +121,13 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
           Score Distribution - Participants with Score ≥ X
         </h2>
-        <div className="h-96">
+        <div className="h-96 pb-8">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={graphData}>
+            <LineChart data={graphData} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis 
                 dataKey="score" 
-                label={{ value: 'Minimum Score', position: 'insideBottom', offset: -10 }}
+                label={{ value: 'Minimum Score', position: 'insideBottom', offset: -40 }}
               />
               <YAxis 
                 label={{ value: 'Number of Participants', angle: -90, position: 'insideLeft' }}
