@@ -160,7 +160,7 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
                   {participant.province}
                 </td>
                 {['1A', '1B', '1C', '2A', '2B', '2C'].map((problem) => (
-                  <td key={problem} className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
+                  <td key={problem} className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium max-w-xs">
                     <span className={participant.scores[problem as keyof typeof participant.scores] === 100 ? 'text-green-600 font-bold' : 'text-gray-700'}>
                       {participant.scores[problem as keyof typeof participant.scores] ?? '-'}
                     </span>
