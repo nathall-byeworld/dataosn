@@ -44,15 +44,21 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   
   const stats = problemStats[problemId];
   
-  // Prepare data for the suffix graph using unique scores
-  const uniqueScores = Object.keys(stats.suffixCounts)
-    .map(score => parseInt(score))
-    .filter(score => stats.suffixCounts[score] > 0)
-    .sort((a, b) => a - b);
+  // Get unique scores that participants actually achieved
+  const participantScores = participants
+    .map(p => p.scores[problemId as keyof typeof p.scores])
+    .filter(score => score !== null)
+    .map(score => score as number);
   
-  const graphData = uniqueScores.map(score => ({
+  const uniqueParticipantScores = [...new Set(participantScores)];
+  
+  // Always include 0 and 100 as reference points
+  const allScores = new Set([0, 100, ...uniqueParticipantScores]);
+  const sortedScores = Array.from(allScores).sort((a, b) => a - b);
+  
+  const graphData = sortedScores.map(score => ({
     score,
-    participants: stats.suffixCounts[score]
+    participants: stats.suffixCounts[score] || 0
   }));
   
   const getCutoffMedal = (score: number) => {
