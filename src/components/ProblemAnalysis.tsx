@@ -44,14 +44,16 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   
   const stats = problemStats[problemId];
   
-  // Prepare data for the suffix graph
-  const graphData = [];
-  for (let score = 0; score <= 100; score += 5) {
-    graphData.push({
-      score,
-      participants: stats.suffixCounts[score] || 0
-    });
-  }
+  // Prepare data for the suffix graph using unique scores
+  const uniqueScores = Object.keys(stats.suffixCounts)
+    .map(score => parseInt(score))
+    .filter(score => stats.suffixCounts[score] > 0)
+    .sort((a, b) => a - b);
+  
+  const graphData = uniqueScores.map(score => ({
+    score,
+    participants: stats.suffixCounts[score]
+  }));
   
   const getCutoffMedal = (score: number) => {
     if (score >= medalCutoffs.gold) return 'Gold';
