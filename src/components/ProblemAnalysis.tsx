@@ -46,7 +46,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   
   // Prepare data for the suffix graph
   const graphData = [];
-  for (let score = 0; score <= 100; score ++) {
+  for (let score = 0; score <= 100; score += 5) {
     graphData.push({
       score,
       participants: stats.suffixCounts[score] || 0
