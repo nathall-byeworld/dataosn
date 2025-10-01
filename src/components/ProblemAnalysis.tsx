@@ -89,8 +89,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             <BarChart3 className="h-6 w-6 text-yellow-600 mr-2" />
             <h3 className="text-sm font-medium text-yellow-800">Top 10 Cutoff</h3>
           </div>
-          <p className="text-3xl font-bold text-yellow-900">{stats.top10} points</p>
-          <p className="text-sm text-yellow-700">{getCutoffMedal(stats.top10)} Level</p>
+          <p className="text-3xl font-bold text-yellow-900">{stats.top10} pts</p>
         </div>
         
         <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
@@ -98,17 +97,16 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             <BarChart3 className="h-6 w-6 text-blue-600 mr-2" />
             <h3 className="text-sm font-medium text-blue-800">Top 25 Cutoff</h3>
           </div>
-          <p className="text-3xl font-bold text-blue-900">{stats.top25} points</p>
+          <p className="text-3xl font-bold text-blue-900">{stats.top25} pts</p>
           <p className="text-sm text-blue-700">{getCutoffMedal(stats.top25)} Level</p>
         </div>
         
         <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
           <div className="flex items-center mb-2">
-            <Users className="h-6 w-6 text-purple-600 mr-2" />
+            <BarChart3 className="h-6 w-6 text-purple-600 mr-2" />
             <h3 className="text-sm font-medium text-purple-800">Top 40 Cutoff</h3>
           </div>
-          <p className="text-3xl font-bold text-purple-900">{stats.top40} points</p>
-          <p className="text-sm text-purple-700">{getCutoffMedal(stats.top40)} Level</p>
+          <p className="text-3xl font-bold text-purple-900">{stats.top40} pts</p>
         </div>
       </div>
       
