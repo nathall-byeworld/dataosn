@@ -148,6 +148,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
             </LineChart>
           </ResponsiveContainer>
         </div>
+        <p></p>
         <p className="text-gray-600 mt-4 text-center">
           This graph shows how many participants achieved at least a certain score on Problem {problemId}
         </p>
