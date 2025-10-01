@@ -57,7 +57,7 @@ const ProblemAnalysis: React.FC<ProblemAnalysisProps> = ({ participantsByYear })
   
   const graphData = sortedScores.map(score => ({
     score,
-    participants: stats.suffixCounts[score] || 0
+    participants: stats.suffixCounts[score]
   }));
   
   const getCutoffMedal = (score: number) => {
