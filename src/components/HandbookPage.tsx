@@ -41,7 +41,7 @@ const HandbookPage: React.FC = () => {
         {
           name: "General strategy for interactive",
           link: "#",
-          description: "1) Use queries to find information first. 2) Use that info to answer the problem. 3) OPtimize"
+          description: "1) Use queries to find information first. 2) Use that info to answer the problem. 3) Optimize"
         },
         {
           name: "Specific tips",
