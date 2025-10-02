@@ -121,7 +121,9 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
               {['1A', '1B', '1C', '2A', '2B', '2C'].map((problem) => (
                 <th
                   key={problem}
-                  className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                  className={`px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors ${
+                    sortBy === problem ? 'bg-blue-50' : ''
+                  }`}
                   onClick={() => handleSort(problem)}
                 >
                   <div className="flex items-center justify-center space-x-1">
@@ -131,7 +133,9 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
                 </th>
               ))}
               <th
-                className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                className={`px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors ${
+                  sortBy === 'total' ? 'bg-blue-50' : ''
+                }`}
                 onClick={() => handleSort('total')}
               >
                 <div className="flex items-center justify-center space-x-1">
@@ -161,12 +165,16 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
                 </td>
                 {['1A', '1B', '1C', '2A', '2B', '2C'].map((problem) => (
                   <td key={problem} className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
-                    <span className={participant.scores[problem as keyof typeof participant.scores] === 100 ? 'text-green-600 font-bold' : 'text-gray-700'}>
+                    <span className={`${
+                      sortBy === problem ? 'bg-blue-50' : ''
+                    } ${participant.scores[problem as keyof typeof participant.scores] === 100 ? 'text-green-600 font-bold' : 'text-gray-700'}`}>
                       {participant.scores[problem as keyof typeof participant.scores] ?? '-'}
                     </span>
                   </td>
                 ))}
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-gray-900">
+                <td className={`px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-gray-900 ${
+                  sortBy === 'total' ? 'bg-blue-50' : ''
+                }`}>
                   {participant.total}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
