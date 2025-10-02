@@ -153,7 +153,7 @@ const HandbookPage: React.FC = () => {
       </div>
       
       <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Good luck and go get golds!</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Good luck and go get golds!🥳🎉</h3>
         {/* <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           This handbook provides a structured learning path based on successful OSN participants' 
           experiences. Each topic builds upon previous concepts, ensuring solid foundational knowledge.
