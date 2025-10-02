@@ -77,6 +77,7 @@ const HomePage: React.FC<HomePageProps> = ({ participantsByYear }) => {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Comprehensive results and analysis from Indonesia's National Science Olympiad in Informatics.
             Explore detailed statistics, problem analysis, and participant achievements.
+            Made by: ByeWorld
           </p>
         </div>
       </div>
