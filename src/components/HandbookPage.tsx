@@ -89,7 +89,7 @@ const HandbookPage: React.FC = () => {
           ByeWorld's Handbook
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Some eductional problems for OSN preparation.
+          Some educational problems for OSN preparation.
         </p>
       </div>
       
