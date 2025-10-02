@@ -40,7 +40,7 @@ const Navigation: React.FC = () => {
               }`}
             >
               <Book className="h-4 w-4" />
-              <span>ByeWorld's Handbook (On Progress)</span>
+              <span>ByeWorld's Handbook</span>
             </Link>
           </div>
         </div>
