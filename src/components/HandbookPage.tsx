@@ -2,6 +2,19 @@ import React from 'react';
 import { BookOpen, ExternalLink, MapPin } from 'lucide-react';
 
 const HandbookPage: React.FC = () => {
+  const [revealedSpoilers, setRevealedSpoilers] = useState<Set<string>>(new Set());
+  
+  const toggleSpoiler = (problemIndex: number, sectionIndex: number) => {
+    const spoilerId = `${sectionIndex}-${problemIndex}`;
+    const newRevealed = new Set(revealedSpoilers);
+    if (newRevealed.has(spoilerId)) {
+      newRevealed.delete(spoilerId);
+    } else {
+      newRevealed.add(spoilerId);
+    }
+    setRevealedSpoilers(newRevealed);
+  };
+  
   const sections = [
     {
       title: "Interactive Problems",
@@ -10,27 +23,32 @@ const HandbookPage: React.FC = () => {
         {
           name: "Weird Chickens",
           link: "https://tlx.toki.id/problems/osn-2015/2C",
-          description: "Extend subtask 3, use binary search"
+          description: "Extend subtask 3, use binary search",
+          spoiler: "The key insight is to binary search on the answer. For each candidate answer, simulate the process to check if it's achievable."
         },
         {
           name: "Maybe Guess the Number",
           link: "https://tlx.toki.id/problems/osn-2015/1C", 
-          description: "Divide by 3?"
+          description: "Divide by 3?",
+          spoiler: "Use ternary search strategy. Ask about ranges that divide the search space into three parts, then eliminate 2/3 of the possibilities."
         },
         {
           name: "Stack & Queue Applications",
           link: "https://tlx.toki.id/problems/osn-2022/1B",
-          description: "Find information (A and B), then find the answer (MST)"
+          description: "Find information (A and B), then find the answer (MST)",
+          spoiler: "First, use queries to determine the graph structure. Then apply MST algorithms like Kruskal's or Prim's on the discovered graph."
         },
         {
           name: "How to solve interactive",
           link: "#",
-          description: "Use queries to find information first, then use that info to answer the problem"
+          description: "Use queries to find information first, then use that info to answer the problem",
+          spoiler: "General strategy: 1) Analyze what information you need 2) Design queries to gather that info efficiently 3) Use the gathered info to solve the original problem"
         },
         {
           name: "Specific tips",
           link: "#",
-          description: "Extend subtasks, use DnC (binary search, divide by 3, etc), can you optimize the num of queries?"
+          description: "Extend subtasks, use DnC (binary search, divide by 3, etc), can you optimize the num of queries?",
+          spoiler: "Always try to extend partial solutions from smaller subtasks. Use divide and conquer techniques. Count your queries carefully and see if you can reduce them."
         }
       ]
     },
@@ -41,17 +59,20 @@ const HandbookPage: React.FC = () => {
         {
           name: "National Defence",
           link: "https://tlx.toki.id/problems/ksn-2020/1A",
-          description: "Solve each subtask separately (dikuli)"
+          description: "Solve each subtask separately (dikuli)",
+          spoiler: "For each subtask, analyze the constraints and write a specific solution. Don't try to find one solution for all - optimize for each case separately."
         },
         {
           name: "Tourism in Palembang",
           link: "https://tlx.toki.id/problems/osn-2016/2C",
-          description: "Use random (mt19937)"
+          description: "Use random (mt19937)",
+          spoiler: "Use randomized algorithms like simulated annealing or genetic algorithms. The mt19937 random number generator can help find good solutions through random exploration."
         },
         {
           name: "Monochrome Mosaic",
           link: "https://tlx.toki.id/problems/osn-2024/0C",
-          description: "Sometimes you can solve it just like a batch problem"
+          description: "Sometimes you can solve it just like a batch problem",
+          spoiler: "Even though it's output-only, you can sometimes write a program that reads the input and produces the output, just like a regular competitive programming problem."
         }
       ]
     }
@@ -85,9 +106,12 @@ const HandbookPage: React.FC = () => {
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {section.problems.map((problem, problemIndex) => (
-                  <div 
+                  <a
                     key={problemIndex}
-                    className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer group"
+                    href={problem.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow group"
                   >
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
@@ -98,7 +122,29 @@ const HandbookPage: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed">
                       {problem.description}
                     </p>
-                  </div>
+                    <div className="mt-3">
+                      <div
+                        className={`text-sm p-2 rounded cursor-pointer transition-all ${
+                          revealedSpoilers.has(`${sectionIndex}-${problemIndex}`)
+                            ? 'bg-green-50 text-green-800 border border-green-200'
+                            : 'bg-gray-800 text-gray-800 select-none hover:bg-gray-700'
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          toggleSpoiler(problemIndex, sectionIndex);
+                        }}
+                      >
+                        {revealedSpoilers.has(`${sectionIndex}-${problemIndex}`) ? (
+                          <>
+                            <span className="font-medium text-green-700">💡 Hint: </span>
+                            {problem.spoiler}
+                          </>
+                        ) : (
+                          <span className="select-none">Click to reveal hint...</span>
+                        )}
+                      </div>
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>
