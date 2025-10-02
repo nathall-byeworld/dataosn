@@ -127,7 +127,7 @@ const HandbookPage: React.FC = () => {
                         className={`text-sm p-2 rounded cursor-pointer transition-all ${
                           revealedSpoilers.has(`${sectionIndex}-${problemIndex}`)
                             ? 'bg-green-50 text-green-800 border border-green-200'
-                            : 'bg-gray-800 text-gray-800 select-none hover:bg-gray-700'
+                            : 'bg-gray-800 text-gray-800 select-none hover:bg-gray-600'
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -140,7 +140,7 @@ const HandbookPage: React.FC = () => {
                             {problem.spoiler}
                           </>
                         ) : (
-                          <span className="select-none">Click to reveal hint...</span>
+                          <span className="select-none text-gray-200">Click to reveal hint...</span>
                         )}
                       </div>
                     </div>
