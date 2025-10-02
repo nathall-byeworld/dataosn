@@ -120,28 +120,30 @@ const HandbookPage: React.FC = () => {
                     <p className="text-gray-600 text-sm leading-relaxed">
                       {problem.description}
                     </p>
-                    <div className="mt-3">
-                      <div
-                        className={`text-sm p-2 rounded cursor-pointer transition-all ${
-                          revealedSpoilers.has(`${sectionIndex}-${problemIndex}`)
-                            ? 'bg-green-50 text-green-800 border border-green-200'
-                            : 'bg-gray-800 text-gray-800 select-none hover:bg-gray-600'
-                        }`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          toggleSpoiler(problemIndex, sectionIndex);
-                        }}
-                      >
-                        {revealedSpoilers.has(`${sectionIndex}-${problemIndex}`) ? (
-                          <>
-                            <span className="font-medium text-green-700">💡 Hint: </span>
-                            {problem.spoiler}
-                          </>
-                        ) : (
-                          <span className="select-none text-gray-200">Click to reveal hint...</span>
-                        )}
+                    {problem.spoiler && (
+                      <div className="mt-3">
+                        <div
+                          className={`text-sm p-2 rounded cursor-pointer transition-all ${
+                            revealedSpoilers.has(`${sectionIndex}-${problemIndex}`)
+                              ? 'bg-green-50 text-green-800 border border-green-200'
+                              : 'bg-gray-800 text-gray-200 select-none hover:bg-gray-600'
+                          }`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            toggleSpoiler(problemIndex, sectionIndex);
+                          }}
+                        >
+                          {revealedSpoilers.has(`${sectionIndex}-${problemIndex}`) ? (
+                            <>
+                              <span className="font-medium text-green-700">💡 Hint: </span>
+                              {problem.spoiler}
+                            </>
+                          ) : (
+                            <span className="select-none text-gray-200">Click to reveal hint...</span>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </a>
                 ))}
               </div>
