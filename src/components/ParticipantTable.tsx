@@ -122,7 +122,7 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
                 <th
                   key={problem}
                   className={`px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors ${
-                    sortBy === problem ? 'bg-blue-50' : ''
+                    sortBy === problem ? 'bg-blue-200' : ''
                   }`}
                   onClick={() => handleSort(problem)}
                 >
@@ -134,7 +134,7 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
               ))}
               <th
                 className={`px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors ${
-                  sortBy === 'total' ? 'bg-blue-50' : ''
+                  sortBy === 'total' ? 'bg-blue-200' : ''
                 }`}
                 onClick={() => handleSort('total')}
               >
@@ -166,14 +166,14 @@ const ParticipantTable: React.FC<ParticipantTableProps> = ({ participants, year 
                 {['1A', '1B', '1C', '2A', '2B', '2C'].map((problem) => (
                   <td key={problem} className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium">
                     <span className={`${
-                      sortBy === problem ? 'bg-blue-50' : ''
+                      sortBy === problem ? 'bg-blue-200 px-2 py-1 rounded' : ''
                     } ${participant.scores[problem as keyof typeof participant.scores] === 100 ? 'text-green-600 font-bold' : 'text-gray-700'}`}>
                       {participant.scores[problem as keyof typeof participant.scores] ?? '-'}
                     </span>
                   </td>
                 ))}
                 <td className={`px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-gray-900 ${
-                  sortBy === 'total' ? 'bg-blue-50' : ''
+                  sortBy === 'total' ? 'bg-blue-200' : ''
                 }`}>
                   {participant.total}
                 </td>
