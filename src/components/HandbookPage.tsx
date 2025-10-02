@@ -71,7 +71,12 @@ const HandbookPage: React.FC = () => {
           link: "https://tlx.toki.id/problems/osn-2024/0C",
           description: "OSN 2024 - 0C",
           spoiler: "Sometimes you can solve it just like a batch problem."
-        }
+        },
+        {
+          name: "General strategy for output only",
+          link: "#",
+          description: "1) Solve each task separately. 2) Make sure to get points for small N subtasks. 3) Use random (or even brute force all possibilities) for larger N"
+        },
       ]
     }
   ];
