@@ -23,32 +23,30 @@ const HandbookPage: React.FC = () => {
         {
           name: "Weird Chickens",
           link: "https://tlx.toki.id/problems/osn-2015/2C",
-          description: "Extend subtask 3, use binary search",
-          spoiler: "The key insight is to binary search on the answer. For each candidate answer, simulate the process to check if it's achievable."
+          description: "OSN 2015 - 2C",
+          spoiler: "Extend subtask 3, use binary search"
         },
         {
           name: "Maybe Guess the Number",
           link: "https://tlx.toki.id/problems/osn-2015/1C", 
-          description: "Divide by 3?",
-          spoiler: "Use ternary search strategy. Ask about ranges that divide the search space into three parts, then eliminate 2/3 of the possibilities."
+          description: "OSN 2015 - 1C",
+          spoiler: "Notice that there are 3 types of responses, so with each query you have to divide by the possible answers by 3"
         },
         {
-          name: "Stack & Queue Applications",
+          name: "Building Tunnels",
           link: "https://tlx.toki.id/problems/osn-2022/1B",
-          description: "Find information (A and B), then find the answer (MST)",
-          spoiler: "First, use queries to determine the graph structure. Then apply MST algorithms like Kruskal's or Prim's on the discovered graph."
+          description: "OSN 2022 - 1B",
+          spoiler: "Find information of the edge weights (A and B), then find the answer / build the MST"
         },
         {
-          name: "How to solve interactive",
+          name: "General strategy for interactive",
           link: "#",
-          description: "Use queries to find information first, then use that info to answer the problem",
-          spoiler: "General strategy: 1) Analyze what information you need 2) Design queries to gather that info efficiently 3) Use the gathered info to solve the original problem"
+          description: "1) Use queries to find information first. 2) Use that info to answer the problem. 3) OPtimize"
         },
         {
           name: "Specific tips",
           link: "#",
-          description: "Extend subtasks, use DnC (binary search, divide by 3, etc), can you optimize the num of queries?",
-          spoiler: "Always try to extend partial solutions from smaller subtasks. Use divide and conquer techniques. Count your queries carefully and see if you can reduce them."
+          description: "Extend subtasks, use DnC (binary search, divide by 3, etc), can you optimize the num of queries?"
         }
       ]
     },
@@ -59,20 +57,20 @@ const HandbookPage: React.FC = () => {
         {
           name: "National Defence",
           link: "https://tlx.toki.id/problems/ksn-2020/1A",
-          description: "Solve each subtask separately (dikuli)",
-          spoiler: "For each subtask, analyze the constraints and write a specific solution. Don't try to find one solution for all - optimize for each case separately."
+          description: "KSN 2020 - 1A",
+          spoiler: "Solve each subtask separately (dikuli)"
         },
         {
           name: "Tourism in Palembang",
           link: "https://tlx.toki.id/problems/osn-2016/2C",
-          description: "Use random (mt19937)",
-          spoiler: "Use randomized algorithms like simulated annealing or genetic algorithms. The mt19937 random number generator can help find good solutions through random exploration."
+          description: "OSN 2016 - 2C",
+          spoiler: "Find the brute force solution (N!). Use random (mt19937) for bigger N."
         },
         {
           name: "Monochrome Mosaic",
           link: "https://tlx.toki.id/problems/osn-2024/0C",
-          description: "Sometimes you can solve it just like a batch problem",
-          spoiler: "Even though it's output-only, you can sometimes write a program that reads the input and produces the output, just like a regular competitive programming problem."
+          description: "OSN 2024 - 0C",
+          spoiler: "Sometimes you can solve it just like a batch problem."
         }
       ]
     }
@@ -86,7 +84,7 @@ const HandbookPage: React.FC = () => {
           ByeWorld's Handbook
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          This page is still on progress. Some eductional problems for OSN preparation.
+          Some eductional problems for OSN preparation.
         </p>
       </div>
       
@@ -153,7 +151,7 @@ const HandbookPage: React.FC = () => {
       </div>
       
       <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your Journey?</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Good luck and go get golds!</h3>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
           This handbook provides a structured learning path based on successful OSN participants' 
           experiences. Each topic builds upon previous concepts, ensuring solid foundational knowledge.
