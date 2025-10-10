@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PenTool, Eye, Edit3, Save, Plus, Trash2 } from 'lucide-react';
+import { PenTool, Eye, CreditCard as Edit3, Save, Plus, Trash2 } from 'lucide-react';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 
