@@ -12,7 +12,7 @@ interface BlogPost {
 }
 
 const BlogPage: React.FC = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([
+  const posts: BlogPost[] = [
     {
       id: '1',
       title: 'Welcome to My Blog! 🎉',
@@ -44,66 +44,7 @@ Happy blogging! 😊`,
       createdAt: new Date('2024-01-01'),
       updatedAt: new Date('2024-01-01')
     }
-  ]);
-  
-  const [isCreating, setIsCreating] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
-  const [newTitle, setNewTitle] = useState('');
-  const [newContent, setNewContent] = useState('');
-  const [previewMode, setPreviewMode] = useState<Record<string, boolean>>({});
-
-  const createPost = () => {
-    if (!newTitle.trim() || !newContent.trim()) return;
-    
-    const newPost: BlogPost = {
-      id: Date.now().toString(),
-      title: newTitle,
-      content: newContent,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    };
-    
-    setPosts([newPost, ...posts]);
-    setNewTitle('');
-    setNewContent('');
-    setIsCreating(false);
-  };
-
-  const updatePost = (id: string) => {
-    setPosts(posts.map(post => 
-      post.id === id 
-        ? { ...post, title: newTitle, content: newContent, updatedAt: new Date() }
-        : post
-    ));
-    setEditingId(null);
-    setNewTitle('');
-    setNewContent('');
-  };
-
-  const deletePost = (id: string) => {
-    setPosts(posts.filter(post => post.id !== id));
-  };
-
-  const startEditing = (post: BlogPost) => {
-    setEditingId(post.id);
-    setNewTitle(post.title);
-    setNewContent(post.content);
-    setIsCreating(false);
-  };
-
-  const cancelEditing = () => {
-    setEditingId(null);
-    setIsCreating(false);
-    setNewTitle('');
-    setNewContent('');
-  };
-
-  const togglePreview = (postId: string) => {
-    setPreviewMode(prev => ({
-      ...prev,
-      [postId]: !prev[postId]
-    }));
-  };
+  ];
 
   const renderContent = (content: string) => {
     // Split content by lines and process each line
@@ -259,145 +200,30 @@ Happy blogging! 😊`,
         </p>
       </div>
 
-      {/* Create New Post Button */}
-      <div className="mb-8">
-        <button
-          onClick={() => setIsCreating(true)}
-          className="flex items-center space-x-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors"
-        >
-          <Plus className="h-5 w-5" />
-          <span>New Post</span>
-        </button>
-      </div>
-
-      {/* Create/Edit Post Form */}
-      {(isCreating || editingId) && (
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            {isCreating ? 'Create New Post' : 'Edit Post'}
-          </h2>
-          
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Title
-              </label>
-              <input
-                type="text"
-                value={newTitle}
-                onChange={(e) => setNewTitle(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Enter post title..."
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Content
-              </label>
-              <textarea
-                value={newContent}
-                onChange={(e) => setNewContent(e.target.value)}
-                rows={12}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 font-mono text-sm"
-                placeholder="Write your post content here... 
-
-Use **bold text**, [links](https://example.com), inline math like $x^2$, and block math:
-
-$$\sum_{i=1}^{n} i = \frac{n(n+1)}{2}$$
-
-Don't forget emojis! 🎉"
-              />
-            </div>
-            
-            <div className="flex space-x-4">
-              <button
-                onClick={isCreating ? createPost : () => updatePost(editingId!)}
-                className="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
-              >
-                <Save className="h-4 w-4" />
-                <span>{isCreating ? 'Create' : 'Update'}</span>
-              </button>
-              <button
-                onClick={cancelEditing}
-                className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded-lg transition-colors"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Blog Posts */}
       <div className="space-y-8">
         {posts.map((post) => (
           <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">{post.title}</h2>
-                  <p className="text-sm text-gray-500">
-                    Created: {post.createdAt.toLocaleDateString()} 
-                    {post.updatedAt > post.createdAt && (
-                      <span> • Updated: {post.updatedAt.toLocaleDateString()}</span>
-                    )}
-                  </p>
-                </div>
-                <div className="flex space-x-2">
-                  <button
-                    onClick={() => togglePreview(post.id)}
-                    className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
-                    title={previewMode[post.id] ? 'Show raw content' : 'Show preview'}
-                  >
-                    {previewMode[post.id] ? <Edit3 className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
-                  <button
-                    onClick={() => startEditing(post)}
-                    className="p-2 text-gray-600 hover:text-green-600 transition-colors"
-                    title="Edit post"
-                  >
-                    <Edit3 className="h-4 w-4" />
-                  </button>
-                  <button
-                    onClick={() => deletePost(post.id)}
-                    className="p-2 text-gray-600 hover:text-red-600 transition-colors"
-                    title="Delete post"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
-                </div>
+              <div className="mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">{post.title}</h2>
+                <p className="text-sm text-gray-500">
+                  Created: {post.createdAt.toLocaleDateString()} 
+                  {post.updatedAt > post.createdAt && (
+                    <span> • Updated: {post.updatedAt.toLocaleDateString()}</span>
+                  )}
+                </p>
               </div>
               
               <div className="prose max-w-none">
-                {previewMode[post.id] ? (
-                  <div className="text-gray-800">
-                    {renderContent(post.content)}
-                  </div>
-                ) : (
-                  <pre className="whitespace-pre-wrap font-mono text-sm bg-gray-50 p-4 rounded-lg overflow-x-auto">
-                    {post.content}
-                  </pre>
-                )}
+                <div className="text-gray-800">
+                  {renderContent(post.content)}
+                </div>
               </div>
             </div>
           </article>
         ))}
       </div>
-
-      {posts.length === 0 && !isCreating && (
-        <div className="text-center py-12">
-          <PenTool className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-          <h3 className="text-xl font-medium text-gray-900 mb-2">No posts yet</h3>
-          <p className="text-gray-600 mb-4">Create your first blog post to get started!</p>
-          <button
-            onClick={() => setIsCreating(true)}
-            className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-colors"
-          >
-            Create First Post
-          </button>
-        </div>
-      )}
     </div>
   );
 };
