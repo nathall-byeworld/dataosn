@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Book, Trophy } from 'lucide-react';
+import { Home, Book, Trophy, PenTool } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const location = useLocation();
@@ -41,6 +41,18 @@ const Navigation: React.FC = () => {
             >
               <Book className="h-4 w-4" />
               <span>ByeWorld's Handbook</span>
+            </Link>
+            
+            <Link
+              to="/blog"
+              className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive('/blog') 
+                  ? 'text-blue-700 bg-blue-50' 
+                  : 'text-gray-700 hover:text-blue-700 hover:bg-gray-50'
+              }`}
+            >
+              <PenTool className="h-4 w-4" />
+              <span>Blog</span>
             </Link>
           </div>
         </div>

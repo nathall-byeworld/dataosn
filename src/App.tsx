@@ -7,6 +7,7 @@ import OSNYearPage from './pages/OSNYearPage';
 import StatisticsPage from './components/StatisticsPage';
 import ProblemAnalysis from './components/ProblemAnalysis';
 import HandbookPage from './components/HandbookPage';
+import BlogPage from './components/BlogPage';
 import { parseCSVData, Participant } from './utils/csvParser';
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
             <Route path="/osn/:year/statistics" element={<StatisticsPage participantsByYear={participantsByYear} />} />
             <Route path="/problem/:problemId/:year?" element={<ProblemAnalysis participantsByYear={participantsByYear} />} />
             <Route path="/handbook" element={<HandbookPage />} />
+            <Route path="/blog" element={<BlogPage />} />
           </Routes>
         )}
       </div>
